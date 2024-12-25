@@ -1,3 +1,6 @@
+gradle.startParameter.excludedTaskNames.addAll(
+        gradle.startParameter.taskNames.findAll { it.contains("testClasses") }
+)
 buildscript {
     ext {
         buildToolsVersion = "34.0.0"
@@ -10,6 +13,12 @@ buildscript {
     repositories {
         google()
         mavenCentral()
+        flatDir {
+            dirs 'libs'
+        }
+        flatDir {
+            dirs 'node_modules/react-native-deepar/android/libs'
+        }
     }
     dependencies {
         classpath("com.android.tools.build:gradle")
