@@ -19,11 +19,30 @@ buildscript {
         flatDir {
             dirs 'node_modules/react-native-deepar/android/libs'
         }
+
+        mavenLocal()
+        maven { url "https://jitpack.io" }
+        maven { url "https://plugins.gradle.org/m2/" }
+        maven {
+            url "https://repos.ringme.vn/releases"
+        }
     }
     dependencies {
         classpath("com.android.tools.build:gradle")
         classpath("com.facebook.react:react-native-gradle-plugin")
         classpath("org.jetbrains.kotlin:kotlin-gradle-plugin")
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        mavenLocal()
+        maven { url "https://jitpack.io" }
+        maven { url "https://plugins.gradle.org/m2/" }
+        maven {
+            url "https://repos.ringme.vn/releases"
+        }
     }
 }
 
