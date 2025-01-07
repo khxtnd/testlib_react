@@ -108,12 +108,15 @@ android {
         }
     }
 }
+configurations {
+    all*.exclude group: 'xpp3', module: 'xpp3'
+}
 
 dependencies {
     // The version of react-native is set by the React Native Gradle Plugin
     implementation("com.facebook.react:react-android")
 
-    implementation("com.ringme.sdk:chat:1.4.56")
+    implementation("com.ringme.sdk:chat:1.4.60")
 
     if (hermesEnabled.toBoolean()) {
         implementation("com.facebook.react:hermes-android")
